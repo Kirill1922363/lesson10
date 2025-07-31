@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Країни</title>
+</head>
+<body>
+    <h1>Доступні тури:</h1>
+    <ul>
+        {% for country in countries %}
+        <li>
+            <strong>{{ country.name }}</strong><br>
+            Дата: {{ country.date }}<br>
+            Ціна: {{ country.price }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
