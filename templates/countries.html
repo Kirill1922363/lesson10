@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Країни</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Доступні тури:</h1>
-    <ul>
-        {% for country in countries %}
-        <li>
-            <strong>{{ country.name }}</strong><br>
-            Дата: {{ country.date }}<br>
-            Ціна: {{ country.price }}
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1 class="text-center mb-4 text-primary">Доступні тури:</h1>
+                
+                <div class="row">
+                    {% for country in countries %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-success">{{ country.name }}</h5>
+                                <p class="card-text">
+                                    <i class="bi bi-calendar3"></i> <strong>Дата:</strong> {{ country.date }}<br>
+                                    <i class="bi bi-currency-dollar"></i> <strong>Ціна:</strong> <span class="text-danger fw-bold">{{ country.price }}</span>
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
